@@ -1,15 +1,19 @@
-// Custom Miryoku Keymap for Corne
+// Custom Miryoku Keymap for Corne - Symmetrical Symbol Layer
 
 #include <dt-bindings/zmk/keys.h>
 #include "../miryoku/custom_config.h"
 
-// Define your custom symbol layer here
-#define MIRYOKU_LAYER_SYM \
-&kp HASH,       &kp ASTRK,      &kp AMPS,       &kp PIPE,       &kp RBKT,          &kp CARET,      &kp LBRC,       &kp RBRC,       &kp LPAR,       &kp RPAR, \
-&kp EXCL,       &kp UNDER,      &kp COLON,      &kp EQUAL,      &kp DLLR,          &kp AT,         &kp LPAR,       &kp RPAR,       &kp UNDER,      &kp SEMI, \
-&kp PRCNT,      &kp QMARK,      &kp ASTRK,      &kp PLUS,       &kp SLASH,         &kp SLASH,      &kp MINUS,      &kp LT,         &kp GT,         &kp DQT, \
-U_NP,           U_NP,           &kp ESC,        &kp SPACE,      &kp TAB,           &kp RET,        &kp BSPC,       &kp DEL,        U_NP,           U_NP
+// 1. Define your custom symbol layer layout
+#define MIRYOKU_LAYER_SYM_CUSTOM \
+&kp HASH,  &kp ASTRK, &kp AMPS,  &kp PIPE,  &kp RBKT,  &kp CARET, &kp LBRC,  &kp RBRC,  &kp LPAR, &kp RPAR, \
+&kp EXCL,  &kp UNDER, &kp COLON, &kp EQUAL, &kp DLLR,  &kp AT,    &kp LPAR,  &kp RPAR,  &kp UNDER,&kp SEMI, \
+&kp PRCNT, &kp QMARK, &kp ASTRK, &kp PLUS,  &kp SLASH, &kp SLASH, &kp MINUS, &kp LT,    &kp GT,   &kp DQT, \
+U_NP,      U_NP,      &kp ESC,   &kp SPACE, &kp TAB,   &kp RET,   &kp BSPC,  &kp DEL,   U_NP,     U_NP
 
-// Include the standard Miryoku mapping and core files
+// 2. Assign your custom layout to both the SYM and MOUSE layers
+#define MIRYOKU_LAYER_SYM MIRYOKU_LAYER_SYM_CUSTOM
+#define MIRYOKU_LAYER_MOUSE MIRYOKU_LAYER_SYM_CUSTOM
+
+// 3. Include the standard Miryoku mapping and core files
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
